@@ -11,11 +11,12 @@ Just for practice.
 ## Powered by
 
 -  React Native
+-  Expo
 -  Redux
 
 ## Refrence
-UI
-- SoundClod
+
+- SoundCloud
 - Oppo Music
 
 ## Todo
