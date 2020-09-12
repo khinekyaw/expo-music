@@ -3,6 +3,7 @@ export default TRACKS = [
     title: "Musics",
     data: [
       {
+        musicId: "000001",
         title: "Dream",
         artist: "Suzy and Baekhyun",
         duration: "3:46",
@@ -12,6 +13,7 @@ export default TRACKS = [
           "https://drive.google.com/uc?id=1-nsfWbVc3dFCoAlsrBZgSJwLW4qXuGhu&export=download"
       },
       {
+        musicId: "000002",
         title: "Fur Elise",
         artist: "Beethoven",
         duration: "2:55",
@@ -21,6 +23,7 @@ export default TRACKS = [
           "https://drive.google.com/uc?id=1ZjsdCvDt43fDcdN7JGnfboK2xpMeAEw5&export=download"
       },
       {
+        musicId: "000003",
         title: "On My Way",
         artist: "Alan Walker",
         duration: "3:13",

@@ -11,12 +11,11 @@ import { connect } from "react-redux"
 import { colors } from "../ui/colors"
 import MusicRow from "../components/MusicRow"
 import { selectMusic } from "../redux/actions"
-import TRACKS from "../api/Tracks"
 
 const MusicListView = props => (
   <View>
     <SectionList
-      sections={TRACKS}
+      sections={props.tracks}
       keyExtractor={(item, index) => item + index}
       renderItem={({ item }) => (
         <MusicRow {...item} onSelect={props.selectMusic} />
@@ -36,4 +35,8 @@ const styles = StyleSheet.create({
   text: {}
 })
 
-export default connect(null, { selectMusic })(MusicListView)
+const mapStateToProps = state => ({
+  tracks: state.tracks
+})
+
+export default connect(mapStateToProps, { selectMusic })(MusicListView)

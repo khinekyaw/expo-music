@@ -11,7 +11,7 @@ export default MusicDetailsFooter = props => {
   return (
     <View style={styles.container}>
       <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.prevBtn}>
+        <TouchableOpacity style={styles.prevBtn} onPress={props.prevMusic}>
           <Entypo
             name={"controller-jump-to-start"}
             size={sizes.median}
@@ -25,7 +25,7 @@ export default MusicDetailsFooter = props => {
             color={colors.light}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.nextBtn}>
+        <TouchableOpacity style={styles.nextBtn} onPress={props.nextMusic}>
           <Entypo
             name={"controller-next"}
             size={sizes.median}

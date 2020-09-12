@@ -9,7 +9,6 @@ import {
   ImageBackground
 } from "react-native"
 import { connect } from "react-redux"
-import Entypo from "react-native-vector-icons/Entypo"
 import { selectMusic } from "../redux/actions"
 
 import { colors } from "../ui/colors"
@@ -19,6 +18,26 @@ import MusicStatusSlider from "../components/MusicStatusSlider"
 import sizes from "../ui/sizes"
 
 class FloatMusicDetailsView extends Component {
+  getMusicId = () => {
+    const { data } = this.props.tracks[0]
+    const idx = data.findIndex(
+      obj => this.props.selected_music.musicId === obj.musicId
+    )
+    return { id: idx, data: data }
+  }
+
+  backPrev = () => {
+    const info = this.getMusicId()
+    if (!info.id) return
+    this.props.selectMusic(info.data[info.id - 1])
+  }
+
+  gotoNext = () => {
+    const info = this.getMusicId()
+    if (info.id + 1 === info.data.length) return
+    this.props.selectMusic(info.data[info.id + 1])
+  }
+
   render() {
     const { selected_music } = this.props
     return (
@@ -43,6 +62,8 @@ class FloatMusicDetailsView extends Component {
           <MusicDetailsFooter
             pauseState={this.props.pauseState}
             togglePlay={this.props.toggleMusic}
+            nextMusic={this.gotoNext}
+            prevMusic={this.backPrev}
           />
         </ImageBackground>
       </View>
@@ -51,7 +72,8 @@ class FloatMusicDetailsView extends Component {
 }
 
 const mapStateToProps = state => ({
-  selected_music: state.selected_music
+  selected_music: state.selected_music,
+  tracks: state.tracks
 })
 
 export default connect(mapStateToProps, { selectMusic })(FloatMusicDetailsView)
