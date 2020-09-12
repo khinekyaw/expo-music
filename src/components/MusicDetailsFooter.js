@@ -11,6 +11,13 @@ export default MusicDetailsFooter = props => {
   return (
     <View style={styles.container}>
       <View style={styles.btnContainer}>
+        <TouchableOpacity style={styles.playMode} onPress={null}>
+          <Entypo
+            name={`shuffle`}
+            size={sizes.small}
+            color={colors.light_transparent}
+          />
+        </TouchableOpacity>
         <TouchableOpacity style={styles.prevBtn} onPress={props.prevMusic}>
           <Entypo
             name={"controller-jump-to-start"}
@@ -32,6 +39,13 @@ export default MusicDetailsFooter = props => {
             color={colors.light}
           />
         </TouchableOpacity>
+        <TouchableOpacity style={styles.options} onPress={null}>
+          <Entypo
+            name={`dots-three-horizontal`}
+            size={sizes.small}
+            color={colors.light_transparent}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -46,12 +60,19 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: colors.dark_transparent,
-    height: 160
+    height: 110,
+    paddingBottom: 15
   },
   prevBtn: {},
   playBtn: {
-    marginStart: 70,
-    marginEnd: 70
+    marginStart: 38,
+    marginEnd: 38
+  },
+  playMode: {
+    marginEnd: 40
+  },
+  options: {
+    marginStart: 40
   },
   nextBtn: {}
 })

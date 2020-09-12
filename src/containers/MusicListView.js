@@ -1,11 +1,5 @@
 import React, { Component, version } from "react"
-import {
-  Text,
-  View,
-  StyleSheet,
-  SectionList,
-  ImagePropTypes
-} from "react-native"
+import { View, StyleSheet, SectionList } from "react-native"
 import { connect } from "react-redux"
 
 import { colors } from "../ui/colors"

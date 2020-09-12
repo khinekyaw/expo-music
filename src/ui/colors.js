@@ -4,7 +4,7 @@ export const colors = {
   dark: "#000",
   dark_transparent: "#00000090",
   dark_background: "#111111",
-  secondary_dark: "#6b6b6b",
+  secondary_dark: "#595959",
   tertiary_dark: "#adadad",
   secondary_text: "#E5E5E5B0",
 

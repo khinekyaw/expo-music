@@ -11,6 +11,8 @@ export const screenOptions = ({ route }) => ({
       iconName = "ios-home"
     } else if (route.name === "Search") {
       iconName = "ios-search"
+    } else if (route.name === "Book") {
+      iconName = "ios-bookmark"
     }
     // You can return any component that you like here!
     return <Ionicons name={iconName} size={26} color={color} />

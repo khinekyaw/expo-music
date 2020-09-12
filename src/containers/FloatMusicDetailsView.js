@@ -15,6 +15,7 @@ import { colors, blurs } from "../ui/colors"
 import MusicDetailsHeader from "../components/MusicDetailsHeader"
 import MusicDetailsFooter from "../components/MusicDetailsFooter"
 import MusicStatusSlider from "../components/MusicStatusSlider"
+import MusicDetailsActionBar from "../components/MusicDetailsActionBar"
 import sizes from "../ui/sizes"
 
 class FloatMusicDetailsView extends Component {
@@ -58,7 +59,8 @@ class FloatMusicDetailsView extends Component {
               source={{ uri: selected_music.albumArtUrl }}
             />
           </View>
-          <MusicStatusSlider />
+          <MusicDetailsActionBar />
+          <MusicStatusSlider updateSlider={this.props.updateSlider} />
           <MusicDetailsFooter
             pauseState={this.props.pauseState}
             togglePlay={this.props.toggleMusic}

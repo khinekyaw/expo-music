@@ -42,8 +42,8 @@ export default class ExpoMusicApp extends Component {
 
   _loadFontsAsync = async () => {
     await loadAsync({
-      Kufam: require("../assets/fonts/Kufam-Regular.ttf"),
-      "Kufam-SemiBold": require("../assets/fonts/Kufam-SemiBold.ttf")
+      PTSans: require("../assets/fonts/PTSans-Regular.ttf"),
+      "PTSans-Bold": require("../assets/fonts/PTSans-Bold.ttf")
     })
     this.setState({ isReady: true })
   }
@@ -56,6 +56,7 @@ export default class ExpoMusicApp extends Component {
           tabBarOptions={tabBarOptions}>
           <MainTab.Screen name='Home' component={Home} />
           <MainTab.Screen name='Search' component={Search} />
+          <MainTab.Screen name='Book' component={Search} />
         </MainTab.Navigator>
         {/* Non-Nav */}
         <StickyMusicPlayerView />

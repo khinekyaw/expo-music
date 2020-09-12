@@ -14,6 +14,10 @@ class StickyMusicPlayerView extends Component {
     pause: true
   }
 
+  setMusicCallback = updater => {
+    PureMusicPlayer.setPlayback(updater)
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.selected_music !== this.props.selected_music) {
       this.reloadMusic(this.props.selected_music.audioUrl)
@@ -43,6 +47,7 @@ class StickyMusicPlayerView extends Component {
       />
     ) : (
       <FloatMusicDetailsView
+        updateSlider={this.setMusicCallback}
         pauseState={this.state.pause}
         toggleMusic={this.toggleMusic}
         changeView={this.changeView}

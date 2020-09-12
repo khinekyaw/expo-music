@@ -1,15 +1,16 @@
 import React, { Component } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { color } from "react-native-reanimated"
 import Entypo from "react-native-vector-icons/Entypo"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
+import CustomText from "../components/CustomText"
 import { colors } from "../ui/colors"
 import sizes from "../ui/sizes"
 
 const MusicSectionHeader = props => (
   <View style={styles.container}>
-    <Text style={styles.header}>{props.section.title}</Text>
+    <CustomText style={styles.header}>{props.section.title}</CustomText>
   </View>
 )
 

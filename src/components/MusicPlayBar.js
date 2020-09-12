@@ -8,6 +8,7 @@ import {
 } from "react-native"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
+import CustomText from "../components/CustomText"
 import { colors, blurs } from "../ui/colors"
 import sizes from "../ui/sizes"
 
@@ -31,12 +32,12 @@ export default MusicPlayBar = props => {
         <TouchableOpacity
           style={styles.textContainer}
           onPress={props.changeView}>
-          <Text style={[styles.text, styles.title]}>
+          <CustomText style={[styles.text, styles.title]}>
             {props.selected_music.title}
-          </Text>
-          <Text style={[styles.text, styles.artist]}>
+          </CustomText>
+          <CustomText style={[styles.text, styles.artist]}>
             {props.selected_music.artist}
-          </Text>
+          </CustomText>
         </TouchableOpacity>
         <View style={styles.loveBtn}>
           <Ionicons name='ios-heart' size={sizes.heart} color={colors.light} />
@@ -53,14 +54,14 @@ const playBtnArea = 40
 const styles = StyleSheet.create({
   artist: {
     color: colors.secondary_text,
-    fontSize: 12,
-    marginTop: -5
+    fontSize: sizes.common_artist,
+    marginTop: 0
   },
   background: {
     flex: 1,
     resizeMode: "cover",
     bottom: sizes.sticky_player_pos,
-    height: 46,
+    height: 50,
     width: "100%",
     position: "absolute"
   },
@@ -78,8 +79,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   title: {
-    fontSize: 15,
-    marginTop: 0
+    fontSize: sizes.common_title,
+    marginTop: -5,
+    marginBottom: 2
   },
   loveBtn: {
     alignItems: "center",

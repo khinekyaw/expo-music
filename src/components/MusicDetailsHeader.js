@@ -2,14 +2,17 @@ import React from "react"
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native"
 import Entypo from "react-native-vector-icons/Entypo"
 
+import CustomText from "../components/CustomText"
 import { colors } from "../ui/colors"
 import sizes from "../ui/sizes"
 
 export default MusicDetailsHeader = props => (
   <View style={styles.header}>
     <View style={styles.headerCol1}>
-      <Text style={[styles.text, styles.artist]}>{props.artist}</Text>
-      <Text style={[styles.text, styles.title]}>{props.title}</Text>
+      <CustomText style={[styles.text, styles.artist]}>
+        {props.artist}
+      </CustomText>
+      <CustomText style={[styles.text, styles.title]}>{props.title}</CustomText>
     </View>
     <TouchableOpacity style={styles.chevronIcon} onPress={props.changeView}>
       <Entypo
@@ -24,7 +27,7 @@ export default MusicDetailsHeader = props => (
 const styles = StyleSheet.create({
   artist: {
     color: colors.secondary_text,
-    fontSize: 15
+    fontSize: sizes.big_artist
   },
   chevronIcon: {
     paddingTop: 10,
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     color: colors.light
   },
   title: {
-    marginTop: -5,
-    fontSize: 20
+    marginTop: 2,
+    fontSize: sizes.big_title
   }
 })
