@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, version } from "react"
 import {
   Text,
   View,
@@ -10,6 +10,7 @@ import { connect } from "react-redux"
 
 import { colors } from "../ui/colors"
 import MusicRow from "../components/MusicRow"
+import MusicSectionHeader from "../components/MusicSectionHeader"
 import { selectMusic } from "../redux/actions"
 
 const MusicListView = props => (
@@ -20,18 +21,14 @@ const MusicListView = props => (
       renderItem={({ item }) => (
         <MusicRow {...item} onSelect={props.selectMusic} />
       )}
-      renderSectionHeader={({ section: { title } }) => (
-        <Text style={styles.listHeader}>{title}</Text>
-      )}
+      renderSectionHeader={MusicSectionHeader}
+      ListFooterComponent={<View style={{ marginVertical: 35 }}></View>}
     />
   </View>
 )
 
 const styles = StyleSheet.create({
   container: {},
-  listHeader: {
-    fontSize: 20
-  },
   text: {}
 })
 

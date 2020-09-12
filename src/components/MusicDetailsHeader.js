@@ -13,7 +13,7 @@ export default MusicDetailsHeader = props => (
     </View>
     <TouchableOpacity style={styles.chevronIcon} onPress={props.changeView}>
       <Entypo
-        name={`chevron-thin-down`}
+        name={"chevron-thin-down"}
         size={sizes.chevron_down}
         color={colors.light}
       />

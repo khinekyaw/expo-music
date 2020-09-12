@@ -10,6 +10,8 @@ import MusicListScreen from "./screens/MusicListScreen"
 import SearchScreen from "./screens/SearchScreen"
 // Special
 import StickyMusicPlayerView from "./containers/StickyMusicPlayerView"
+// Options
+import { screenOptions, tabBarOptions } from "./ui/main_tabbar"
 
 const MainTab = createBottomTabNavigator()
 const HomeStack = createStackNavigator()
@@ -33,7 +35,9 @@ export default class ExpoMusicApp extends Component {
   render() {
     return (
       <NavigationContainer>
-        <MainTab.Navigator>
+        <MainTab.Navigator
+          screenOptions={screenOptions}
+          tabBarOptions={tabBarOptions}>
           <MainTab.Screen name='Home' component={Home} />
           <MainTab.Screen name='Search' component={Search} />
         </MainTab.Navigator>

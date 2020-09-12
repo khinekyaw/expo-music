@@ -11,7 +11,7 @@ import {
 import { connect } from "react-redux"
 import { selectMusic } from "../redux/actions"
 
-import { colors } from "../ui/colors"
+import { colors, blurs } from "../ui/colors"
 import MusicDetailsHeader from "../components/MusicDetailsHeader"
 import MusicDetailsFooter from "../components/MusicDetailsFooter"
 import MusicStatusSlider from "../components/MusicStatusSlider"
@@ -46,7 +46,7 @@ class FloatMusicDetailsView extends Component {
           source={{ uri: selected_music.albumArtUrl }}
           style={styles.background}
           imageStyle={styles.backgroundImage}
-          blurRadius={5}>
+          blurRadius={blurs.scale1}>
           <MusicDetailsHeader
             title={selected_music.title}
             artist={selected_music.artist}
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {},
   container: {
-    backgroundColor: colors.dark_transparent,
+    backgroundColor: colors.secondary_dark,
     position: "absolute",
     width: "100%",
     height: "100%",

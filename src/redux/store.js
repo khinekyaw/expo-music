@@ -21,8 +21,8 @@ store.dispatch(
 )
 
 store.dispatch(updateTracks(TRACKS))
-// store.dispatch(updateTracks(TRACKS))
-// store.dispatch(updateTracks(TRACKS))
+store.dispatch(updateTracks(TRACKS))
+store.dispatch(updateTracks(TRACKS))
 // store.dispatch(updateTracks(TRACKS))
 
 export default store
