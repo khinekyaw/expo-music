@@ -1,30 +1,15 @@
 import React from "react"
-import * as Font from "expo-font"
 import { View, Text, TouchableOpacity } from "react-native"
 
 import styles from "./styles"
-import { loadAsync } from "expo-font"
+import CustomText from "../components/CustomText"
 
 export default class SearchScreen extends React.Component {
-  state = {
-    isReady: false
-  }
-  loadFontsAsync = async () => {
-    await loadAsync({
-      Kufam: require("../../assets/fonts/Kufam-Regular.ttf")
-    })
-    this.setState({ isReady: true })
-  }
-
-  componentWillMount() {
-    this.loadFontsAsync()
-  }
-
   render() {
-    return this.state.isReady ? (
+    return (
       <View style={styles.container}>
-        <Text style={{ fontSize: 22, fontFamily: "Kufam" }}>Search Screen</Text>
+        <CustomText style={{ fontSize: 22 }}>Search Screen</CustomText>
       </View>
-    ) : null
+    )
   }
 }

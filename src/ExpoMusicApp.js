@@ -4,7 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack"
 import { StatusBar } from "expo-status-bar"
 import { Text, View } from "react-native"
 import { NavigationContainer } from "@react-navigation/native"
+import { loadAsync } from "expo-font"
 
+import LoadingScreen from "./screens/LoadingScreen"
 import MusicDetailsScreen from "./screens/MusicDetailsScreen"
 import MusicListScreen from "./screens/MusicListScreen"
 import SearchScreen from "./screens/SearchScreen"
@@ -32,8 +34,22 @@ const Search = () => (
 )
 
 export default class ExpoMusicApp extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { isReady: false }
+    this._loadFontsAsync()
+  }
+
+  _loadFontsAsync = async () => {
+    await loadAsync({
+      Kufam: require("../assets/fonts/Kufam-Regular.ttf"),
+      "Kufam-SemiBold": require("../assets/fonts/Kufam-SemiBold.ttf")
+    })
+    this.setState({ isReady: true })
+  }
+
   render() {
-    return (
+    return this.state.isReady ? (
       <NavigationContainer>
         <MainTab.Navigator
           screenOptions={screenOptions}
@@ -44,6 +60,8 @@ export default class ExpoMusicApp extends Component {
         {/* Non-Nav */}
         <StickyMusicPlayerView />
       </NavigationContainer>
+    ) : (
+      <LoadingScreen />
     )
   }
 }
