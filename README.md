@@ -14,7 +14,7 @@ Just for practice.
 -  Expo
 -  Redux
 
-## Refrence
+## References
 
 - SoundCloud
 - Oppo Music
