@@ -1,5 +1,6 @@
 ## ExpoMusic
 
+![alt text](https://github.com/KhineKyaw/ExpoMusic/static/images/screen1.png?raw=true)
 
 <p align="center">ExpoMusic is a music streaming app.</p>
 
