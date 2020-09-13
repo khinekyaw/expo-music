@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground
 } from "react-native"
+import { color } from "react-native-reanimated"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 import CustomText from "../components/CustomText"
@@ -32,7 +33,7 @@ export default MusicPlayBar = props => {
         <TouchableOpacity
           style={styles.textContainer}
           onPress={props.changeView}>
-          <CustomText style={[styles.text, styles.title]}>
+          <CustomText style={[styles.text, styles.title]} numberOfLines={1}>
             {props.selected_music.title}
           </CustomText>
           <CustomText style={[styles.text, styles.artist]}>
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
     marginTop: 0
   },
   background: {
+    backgroundColor: color.dark,
     flex: 1,
     resizeMode: "cover",
     bottom: sizes.sticky_player_pos,
@@ -81,7 +83,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: sizes.common_title,
     marginTop: -5,
-    marginBottom: 2
+    marginBottom: 2,
+    paddingHorizontal: 10
   },
   loveBtn: {
     alignItems: "center",

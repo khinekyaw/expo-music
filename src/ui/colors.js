@@ -2,7 +2,7 @@ export const colors = {
   light: "#FFF",
   light_transparent: "#FFFFFF90",
   dark: "#000",
-  dark_transparent: "#00000090",
+  dark_transparent: "#00000099",
   dark_background: "#111111",
   secondary_dark: "#595959",
   tertiary_dark: "#adadad",
@@ -12,6 +12,6 @@ export const colors = {
 }
 
 export const blurs = {
-  scale1: 5,
+  scale1: 12,
   scale2: 10
 }

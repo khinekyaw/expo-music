@@ -9,14 +9,14 @@ const store = new createStore(reducer, applyMiddleware(thunk))
 
 store.dispatch(
   selectMusic({
-    musicId: "000002",
-    title: "Fur Elise",
-    artist: "Beethoven",
-    duration: "2:55",
+    musicId: "000006",
+    title: "Nightcore - In Your Eyes",
+    artist: "Syrex",
+    duration: "03:34",
     albumArtUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/498px-Beethoven.jpg",
+      "https://drive.google.com/uc?id=10xsF0N-Wt-2lvdDCvLu7-h8-AxM_-kKP&export=download",
     audioUrl:
-      "https://drive.google.com/uc?id=1ZjsdCvDt43fDcdN7JGnfboK2xpMeAEw5&export=download"
+      "https://drive.google.com/uc?id=1Ewn5HFLuR-QwaD2F4f8QEI46FwjtCqgh&export=download"
   })
 )
 

@@ -8,17 +8,17 @@ const sizes = {
   chevron_down: 30,
   three_ver_dots: 16,
 
-  cover_size_large: 300,
+  cover_size_large: 290,
   slider_width: 330,
 
   tabbar_height: 53,
   sticky_player_pos: 52,
 
   text_regular: 15,
-  common_title: 16,
+  common_title: 15,
   common_artist: 13,
-  big_title: 21,
-  big_artist: 18
+  big_title: 20,
+  big_artist: 17
 }
 
 export default sizes

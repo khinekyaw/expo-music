@@ -60,7 +60,10 @@ class FloatMusicDetailsView extends Component {
             />
           </View>
           <MusicDetailsActionBar />
-          <MusicStatusSlider updateSlider={this.props.updateSlider} />
+          <MusicStatusSlider
+            title={selected_music.title}
+            musicStatus={this.props.music_status}
+          />
           <MusicDetailsFooter
             pauseState={this.props.pauseState}
             togglePlay={this.props.toggleMusic}
@@ -75,7 +78,8 @@ class FloatMusicDetailsView extends Component {
 
 const mapStateToProps = state => ({
   selected_music: state.selected_music,
-  tracks: state.tracks
+  tracks: state.tracks,
+  music_status: state.music_status
 })
 
 export default connect(mapStateToProps, { selectMusic })(FloatMusicDetailsView)

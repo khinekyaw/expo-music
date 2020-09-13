@@ -1,5 +1,10 @@
 import { combineReducers } from "redux"
-import { SELECT_MUSIC, UPDATE_MUSIC, UPDATE_TRACKS } from "./actions"
+import {
+  SELECT_MUSIC,
+  UPDATE_MUSIC,
+  UPDATE_TRACKS,
+  UPDATE_MUSIC_STATUS
+} from "./actions"
 
 const selectMusicReducer = (state = {}, action) => {
   if (action.type === SELECT_MUSIC) {
@@ -18,9 +23,16 @@ const musicReducer = (state = [], action) => {
   }
 }
 
+const musicStatusReducer = (state = {}, action) => {
+  if (action.type === UPDATE_MUSIC_STATUS) {
+    return action.payload
+  } else return state
+}
+
 const reducer = combineReducers({
   selected_music: selectMusicReducer,
-  tracks: musicReducer
+  tracks: musicReducer,
+  music_status: musicStatusReducer
 })
 
 export default reducer

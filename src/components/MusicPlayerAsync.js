@@ -34,6 +34,7 @@ export default class MusicPlayerAsync {
       // console.log(returned_token)
       if (this.token === returned_token) {
         this.soundObject = tempSoundObj
+        await this.soundObject.setIsLoopingAsync(true)
         this.playbackFunc &&
           this.soundObject.setOnPlaybackStatusUpdate(status =>
             this.playbackFunc(status)
