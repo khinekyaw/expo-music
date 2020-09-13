@@ -1,8 +1,8 @@
 ## ExpoMusic
 
 <p align="center">
-<img width="260" height="510" src="https://github.com/KhineKyaw/ExpoMusic/blob/master/static/images/screen1.png?raw=true">
-<img width="260" height="510" src="https://github.com/KhineKyaw/ExpoMusic/blob/master/static/images/screen2.png?raw=true">
+<img width="270" height="510" src="https://github.com/KhineKyaw/ExpoMusic/blob/master/static/images/screen1.png?raw=true">
+<img width="270" height="510" src="https://github.com/KhineKyaw/ExpoMusic/blob/master/static/images/screen2.png?raw=true">
 </p>
 
 <p align="center">ExpoMusic is a music streaming app.</p>
@@ -25,5 +25,6 @@ Just for practice.
 
 ## Todo
 
+-  [ ] Make slider work
 -  [ ] UI/UX improvement
--  [ ] Expo music server
+-  [ ] Backend server
