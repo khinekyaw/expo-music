@@ -7,6 +7,7 @@ export const colors = {
   secondary_dark: "#595959",
   tertiary_dark: "#adadad",
   secondary_text: "#E5E5E5B0",
+  primary: "#C598C0",
 
   gray_border: "#DADDE1"
 }

@@ -15,6 +15,12 @@ export default class MusicPlayerAsync {
     this.playbackFunc = func
   }
 
+  setMusicPosAsync = async pos => {
+    await this.pauseMusic()
+    await this.soundObject.setPositionAsync(pos)
+    await this.playMusic()
+  }
+
   getSoundObjAsync = async (token, source) => {
     const tempSoundObj = new Audio.Sound()
     await tempSoundObj.loadAsync({ uri: source }, (downloadFirst = true))
@@ -35,10 +41,12 @@ export default class MusicPlayerAsync {
       if (this.token === returned_token) {
         this.soundObject = tempSoundObj
         await this.soundObject.setIsLoopingAsync(true)
+        await this.soundObject.setProgressUpdateIntervalAsync(500)
         this.playbackFunc &&
           this.soundObject.setOnPlaybackStatusUpdate(status =>
             this.playbackFunc(status)
           )
+
         return true
       } else {
         return false

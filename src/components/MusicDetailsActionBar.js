@@ -9,11 +9,7 @@ import sizes from "../ui/sizes"
 export default MusicDetailsActionBar = () => (
   <View style={styles.container}>
     <TouchableOpacity style={styles.heart} onPress={null}>
-      <Ionicons
-        name={"ios-heart"}
-        size={sizes.small}
-        color={colors.light_transparent}
-      />
+      <Ionicons name={"ios-heart"} size={sizes.small} color={colors.primary} />
     </TouchableOpacity>
     <TouchableOpacity style={styles.share} onPress={null}>
       <Entypo

@@ -30,6 +30,10 @@ class StickyMusicPlayerView extends Component {
     this.props.updateMusicStatus(status)
   }
 
+  setMusicPosition = pos => {
+    PureMusicPlayer.setMusicPosAsync(pos)
+  }
+
   changeView = () => this.setState({ showBar: !this.state.showBar })
 
   reloadMusic = source => {
@@ -52,6 +56,7 @@ class StickyMusicPlayerView extends Component {
       />
     ) : (
       <FloatMusicDetailsView
+        setPosition={this.setMusicPosition}
         pauseState={this.state.pause}
         toggleMusic={this.toggleMusic}
         changeView={this.changeView}

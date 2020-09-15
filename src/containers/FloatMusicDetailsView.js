@@ -63,6 +63,7 @@ class FloatMusicDetailsView extends Component {
           <MusicStatusSlider
             title={selected_music.title}
             musicStatus={this.props.music_status}
+            setPosition={this.props.setPosition}
           />
           <MusicDetailsFooter
             pauseState={this.props.pauseState}

@@ -9,14 +9,14 @@ const store = new createStore(reducer, applyMiddleware(thunk))
 
 store.dispatch(
   selectMusic({
-    musicId: "000006",
-    title: "Nightcore - In Your Eyes",
-    artist: "Syrex",
-    duration: "03:34",
+    musicId: "000004",
+    title: "Scooby Doo",
+    artist: "by Shan",
+    duration: "00:14",
     albumArtUrl:
-      "https://drive.google.com/uc?id=10xsF0N-Wt-2lvdDCvLu7-h8-AxM_-kKP&export=download",
+      "https://upload.wikimedia.org/wikipedia/en/9/9a/Scooby-gang-1969.jpg",
     audioUrl:
-      "https://drive.google.com/uc?id=1Ewn5HFLuR-QwaD2F4f8QEI46FwjtCqgh&export=download"
+      "https://drive.google.com/uc?id=1CtRQxkTSCVMdvp2a5mDrjrlXaKXPJkmr&export=download"
   })
 )
 

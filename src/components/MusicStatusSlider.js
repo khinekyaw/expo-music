@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View, StyleSheet, Animated } from "react-native"
+import { Text, View, StyleSheet } from "react-native"
 import Slider from "@react-native-community/slider"
 
 import { colors } from "../ui/colors"
@@ -23,19 +23,23 @@ export default class MusicStatusSlider extends React.Component {
   render() {
     const { musicStatus } = this.props
     const percent = musicStatus.positionMillis / musicStatus.durationMillis
+
     return (
       <View style={styles.container}>
-        <Animated.View style={styles.sliderRow}>
+        <View style={styles.sliderRow}>
           <Slider
             style={styles.slider}
             minimumValue={0}
-            maximumValue={1000}
-            step={1}
-            value={percent * 1000 || 0}
-            minimumTrackTintColor='#FFFFFFB0'
-            maximumTrackTintColor='#FFFFFF50'
+            maximumValue={1}
+            value={percent || 0}
+            thumbTintColor={colors.light}
+            minimumTrackTintColor={colors.light_transparent}
+            maximumTrackTintColor='#ffffff60'
+            onValueChange={value =>
+              this.props.setPosition(value * musicStatus.durationMillis)
+            }
           />
-        </Animated.View>
+        </View>
         <View style={styles.indicator}>
           <Text style={[styles.text, styles.left]}>
             {this.formatTime(musicStatus.positionMillis)}
