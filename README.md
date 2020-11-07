@@ -25,6 +25,5 @@ Just for practice.
 
 ## Todo
 
--  [ ] Make slider work
 -  [ ] UI/UX improvement
 -  [ ] Backend server
